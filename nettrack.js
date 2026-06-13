@@ -15,7 +15,7 @@ const underline = "\x1b[4m";
 const geophis = `
                          ${green}&&&&&${reset}          GeoPhis - Geolocation Phising via Nodejs HTTP Server
                      ${green}&&&&     &${reset}
-                  ${green}&&&    &&&&&${reset}          Usage: node geophis [Options]
+                  ${green}&&&    &&&&&${reset}          Usage: node nettrack.js [Options]
                ${green}&&    &&&&${reset}&&& &
              ${green}&&   &&&${reset} &&&&   &          Options:
             ${green}&   &&${reset} &&&&      &           -p <PORT> : Port for HTTP Server
@@ -23,8 +23,8 @@ const geophis = `
         ${green}&&  &&${reset}               &           -wl <URL>|none : Destination link after get location
        ${green}&& &&${reset}&&             ${red}&&&&&${reset}
       ${green}&  &&${reset} &&           ${red}&&&&&&&&&${reset}      Example:
-     ${green}&  &&${reset}  &&          ${red}&&&     &&&${reset}      node geophis -p 8080 -t ngrok -wl http://example.com
-    ${green}&& &&${reset}  &&           ${red}&&&     &&&${reset}      node geophis -p 8080 -t serveo -wl mone
+     ${green}&  &&${reset}  &&          ${red}&&&     &&&${reset}      node nettrack.js -p 8080 -t ngrok -wl http://example.com
+    ${green}&& &&${reset}  &&           ${red}&&&     &&&${reset}      node nettrack.js -p 8080 -t serveo -wl mone
     ${green}&  &${reset}  &&             ${red}&&&&&&&&&${reset}
    ${green}&${reset}  ${yellow}&&&&&${reset}               ${red}&&&&&&&${reset}       \x1b[41m${underline}Legal disclaimer${reset}
   ${green}&&${reset} ${yellow}&$     &&${reset}             ${red}&&&&&${reset}        ${faint}GeoPhis is developed and distributed for ethical research${reset}
@@ -32,7 +32,7 @@ const geophis = `
  ${green}&    ${yellow}&     && &${reset}             ${red}&${reset}          ${faint}tool are not responsible for any misuse.${reset}
  ${green}&    ${yellow}&&&& &&  &${reset}
 ${green}&&    &     ${yellow}&  &${reset}
-${green}&&    &      ${yellow}&${reset}                          Source: ${underline}${green}https://github.com/ZeltNamizake/geophis${reset}
+${green}&&    &      ${yellow}&${reset}                          Source: ${underline}${green}https://github.com/craxsrt/netphone_track${reset}
  ${green}&&&&&${reset}`;
  
 let htmlContent = `
@@ -275,7 +275,7 @@ async function runScript() {
         console.log(geophis);
     } else {
         console.log(
-            `[i] Try '${bold}node geophis -h${reset} for more information'`
+            `[i] Try '${bold}node nettrack.js -h${reset} for more information'`
         );
     }
 }
