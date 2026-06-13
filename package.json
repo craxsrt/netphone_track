@@ -11,6 +11,7 @@
   "description": "Geolocation Phising via Nodejs HTTP Server",
   "dependencies": {
     "@ngrok/ngrok": "^1.7.0",
+    "@ngrok/ngrok-android-arm-eabi": "^1.4.1",
     "commander": "^14.0.3",
     "ssh2": "^1.17.0"
   }

